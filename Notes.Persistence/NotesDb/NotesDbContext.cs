@@ -3,7 +3,7 @@ using Notes.Application.Interfaces;
 using Notes.Domain;
 using Notes.Persistence.EntityTypeConfigurations;
 
-namespace Notes.Persistence;
+namespace Notes.Persistence.NotesDb;
 
 public class NotesDbContext : DbContext, INotesDbContext
 {

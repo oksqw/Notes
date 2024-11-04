@@ -1,6 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using Notes.Domain;
+
 namespace Notes.Application.Interfaces;
 
-public class INotesDbContext
+public interface INotesDbContext
 {
-    
+    public DbSet<Note> Notes { get; set; }
+    public Task<int> SaveChangesAsync(CancellationToken token);
 }

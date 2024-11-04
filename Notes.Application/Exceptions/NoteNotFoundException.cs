@@ -1,9 +1,3 @@
 namespace Notes.Application.Exceptions;
 
-public class NotFoundException : Exception
-{
-    public NotFoundException()
-    {
-        
-    }
-}
+public class NoteNotFoundException(Guid id) : Exception($"Note {id} not found");

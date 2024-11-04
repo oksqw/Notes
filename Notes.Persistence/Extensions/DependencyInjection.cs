@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Notes.Application.Interfaces;
 using Notes.Persistence.NotesDb;
 
-namespace Notes.Persistence;
+namespace Notes.Persistence.Extensions;
 
 public static class DependencyInjection
 {

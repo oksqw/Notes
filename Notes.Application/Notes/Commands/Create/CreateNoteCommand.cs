@@ -1,16 +1,6 @@
-using MediatR;
-using Notes.Domain;
+namespace Notes.Application.Notes.Commands.Create;
 
-namespace Notes.Application.Notes.Commands;
-
-public class CreateNoteCommand : IRequest<Note>
+public class CreateNoteCommand : NoteCommand
 {
-    public CreateNoteCommand(string title, string text)
-    {
-        Title = title;
-        Text = text;
-    }
-
-    public string Title { get; set; }
-    public string Text { get; set; }
+    public CreateNoteCommand(string title, string text) : base(title, text){}
 }

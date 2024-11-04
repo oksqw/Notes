@@ -2,13 +2,11 @@ using MediatR;
 using Notes.Application.Interfaces;
 using Notes.Domain;
 
-namespace Notes.Application.Notes.Commands;
+namespace Notes.Application.Notes.Commands.Create;
 
-public class CreateNoteCommandHandler : IRequestHandler<CreateNoteCommand, Note>
+public class CreateNoteCommandHandler : NoteCommandHandler, IRequestHandler<CreateNoteCommand, Note>
 {
-    private readonly INotesDbContext _dbContext;
-
-    public CreateNoteCommandHandler(INotesDbContext dbContext) => _dbContext = dbContext;
+    public CreateNoteCommandHandler(INotesDbContext dbContext) : base(dbContext) { }
 
     public async Task<Note> Handle(CreateNoteCommand request, CancellationToken token)
     {

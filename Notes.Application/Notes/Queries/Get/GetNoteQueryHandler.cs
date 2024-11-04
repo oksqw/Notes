@@ -6,9 +6,9 @@ using Notes.Domain;
 
 namespace Notes.Application.Notes.Queries.Get;
 
-public class GetNoteNoteQueryHandler : NoteQueryHandler, IRequestHandler<GetNoteQuery, Note>
+public class GetNoteQueryHandler : NoteQueryHandler, IRequestHandler<GetNoteQuery, Note>
 {
-    protected GetNoteNoteQueryHandler(INotesDbContext dbContext) : base(dbContext) { }
+    public GetNoteQueryHandler(INotesDbContext dbContext) : base(dbContext) { }
     
     public async Task<Note> Handle(GetNoteQuery request, CancellationToken token)
     {

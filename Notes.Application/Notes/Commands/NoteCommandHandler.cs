@@ -1,6 +1,10 @@
-namespace Notes.Application.Notes;
+using Notes.Application.Interfaces;
 
-public class NoteCommandHandler
+namespace Notes.Application.Notes.Commands;
+
+public abstract class NoteCommandHandler
 {
+    protected NoteCommandHandler(INotesDbContext dbContext) => _dbContext = dbContext;
     
+    protected readonly INotesDbContext _dbContext;
 }
